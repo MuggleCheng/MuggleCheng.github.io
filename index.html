@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>TO：小憨子</title>
+
+    <style type="text/css">
+        @font-face {
+            font-family: digit;
+            src: url('digital-7_mono.ttf') format("truetype");
+        }
+    </style>
+
+    <link href="images/favicon.ico" rel="shortcut icon"/>
+    
+    <link href="css/default.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+    <script type="text/javascript" src="js/garden.js"></script>
+
+    <script type="text/javascript" src="js/functions.js"></script>
+
+
+</head>
+
+<body>
+
+    <div id="mainDiv">
+        <div id="content">
+            <div id="code">
+                <span class="comments">/**</span><br />
+                <span class="space" /><span class="comments">*2005-9-9,</span><br />
+                <span class="space" /><span class="comments">*2014-1-5.</span><br />
+                <span class="space" /><span class="comments">*/</span><br />
+                这个 <span class="keyword">男生</span> 第一次 <span class="keyword">遇到</span> <span class="keyword">她</span><br />
+                那个 <span class="keyword">女生</span> 那么地 <span class="keyword">优雅</span> <span class="keyword">美丽</span><br />
+                <span class="comments">// 这个男生莫名地心动了. </span><br />
+                他毅然决然地<span class="keyword">爱上</span>了这个女生;<br />
+                <span class="comments">// 那个女生却没有发现.</span><br />
+                一直到多年以后;<br />
+                <span class="comments">// 很久以后的一天.</span><br />
+                女生失恋了;<br />
+                <span class="comments">// 这个男生发现了.</span><br />
+                男生便安慰她虽然他也不知道怎么去安慰她;<br />
+                <span class="comments">// 男生想要邀请女生去看演唱会.</span><br />
+                <span class="comments">// 女生答应了陪男生去看演唱会.</span><br />
+                <span class="placeholder" /><span class="keyword">这个 男生</span> <span class="keyword">是</span> <span class="keyword">那么地开心</span>;<br />
+                <span class="placeholder" /><span class="keyword">男生</span> <span class="keyword">花了一个月的时间</span> <span class="keyword">去准备</span>;<br />
+                <span class="placeholder" /><span class="comments">// 终于到了看演唱会的那一天</span><br />
+                <span class="placeholder" /><span class="comments">// 男生早早地去女生的考场外等候着.</span><br />
+                <span class="placeholder" />看完演唱会男生准备送女生回学校，女生婉拒了;<br />
+                <span class="placeholder" /><span class="comments">//这个夜晚令这个男生终身难忘，因为女生拒绝了做他的女朋友.</span><br />
+                <br>
+                <br>
+                不管发生什么，男生只想对女生说:<br />
+                <span class="keyword">小憨子</span>,你永远是我最爱的那个人.<br />
+            </div>
+            <div id="loveHeart">
+                <canvas id="garden"></canvas>
+                <div id="words">
+                    <div id="messages">
+                        亲爱的，这是我爱上你的时间。
+                        <div id="elapseClock"></div>
+                    </div>
+                    <div id="loveu">
+                        一直深爱着你的<br />
+                        <div class="signature">- 程先生</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var offsetX = $("#loveHeart").width() / 2;
+        var offsetY = $("#loveHeart").height() / 2 - 55;
+        var together = new Date();
+        together.setFullYear(2005, 9, 9);
+        together.setHours(20);
+        together.setMinutes(0);
+        together.setSeconds(0);
+        together.setMilliseconds(0);
+
+        if (!document.createElement('canvas').getContext) {
+            var msg = document.createElement("div");
+            msg.id = "errorMsg";
+            msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+            document.body.appendChild(msg);
+            $("#code").css("display", "none")
+            $("#copyright").css("position", "absolute");
+            $("#copyright").css("bottom", "10px");
+            document.execCommand("stop");
+        } else {
+            setTimeout(function () {
+                startHeartAnimation();
+            }, 5000);
+
+            timeElapse(together);
+            setInterval(function () {
+                timeElapse(together);
+            }, 500);
+
+            adjustCodePosition();
+            $("#code").typewriter();
+        }
+    </script>
+</body>
+</html>
+
